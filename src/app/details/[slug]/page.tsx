@@ -1,5 +1,7 @@
 import { Bookmark, CalendarDays } from 'lucide-react'
 import Image from 'next/image'
+import PlanButton from './PlanButton'
+import SavedButton from './SavedButton'
 
 interface paramsProps{
   params: Promise<{ slug: string }>
@@ -82,8 +84,8 @@ export default async function DetailsPage({params}:paramsProps) {
 
 
         <div className="flex flex-wrap gap-4">
-          <button className='btn bg-[#C2F700] text-black rounded-md'><CalendarDays /> Add to today's plan</button>
-          <button className='btn rounded-md border border-gray-700'><Bookmark /> Save for latter</button>
+          <PlanButton workout={workout} />
+          <SavedButton />
         </div>
 
         </div>
