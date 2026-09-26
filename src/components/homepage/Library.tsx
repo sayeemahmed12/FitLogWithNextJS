@@ -20,7 +20,7 @@ export default async function Library() {
       <h1 className='font-oswald text-3xl font-bold'>THE LIBRARY</h1>
       <p className='text-gray-400'>Twelve lifts covering every major muscle group.</p>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 place-items-center my-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 place-items-center my-8">
         {workouts.map((workout:WorkoutType) => (
           <WorkoutCard key={workout.id} workout={workout}/>
         ))}

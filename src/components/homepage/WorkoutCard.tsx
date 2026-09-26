@@ -1,8 +1,9 @@
-import type{ WorkoutType } from '@/types/type'
+
 import Image from 'next/image'
 import { Oswald } from 'next/font/google'
 import { ChartPie, Clock, Star } from 'lucide-react';
 import Link from 'next/link';
+import { WorkoutType } from '../../../types/type';
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -40,9 +41,9 @@ export default function WorkoutCard({workout}:workoutProps) {
 
           <div className="mt-5 border-t border-gray-800">
             <ul className='flex items-center gap-4 text-gray-400 mt-4'>
-              <li className='flex items-center gap-2'><Clock size={17}/> {workout.duration} min</li>
-              <li className='flex items-center gap-2'><ChartPie size={17}/> {workout.caloriesBurned} kcal</li>
-              <li className='flex items-center gap-2'><Star size={17}/> {workout.rating}</li>
+              <li className='flex items-center gap-2'><Clock className='text-[#C2F800]' size={17}/> {workout.duration} min</li>
+              <li className='flex items-center gap-2'><ChartPie className='text-[#C2F800]' size={17}/> {workout.caloriesBurned} kcal</li>
+              <li className='flex items-center gap-2'><Star className='text-[#C2F800]' size={17}/> {workout.rating}</li>
             </ul>
           </div>
         </div>
