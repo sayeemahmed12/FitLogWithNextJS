@@ -2,7 +2,6 @@ import Image from 'next/image'
 import PlanButton from './AddToPlan'
 import SavedButton from './AddToSave'
 import { notFound } from 'next/navigation';
-import { collectSegmentData } from 'next/dist/server/app-render/collect-segment-data';
 
 interface paramsProps{
   params: Promise<{ slug: string }>

@@ -1,6 +1,6 @@
 import { WorkoutContext } from '@/components/context/WorkoutContextPage'
 import Image from 'next/image';
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { SortOption, WorkoutType } from '../../../types/type';
 import { Clock, Flame, Star, X} from 'lucide-react';
 import Link from 'next/link';
@@ -12,6 +12,8 @@ interface props{
 
 export default function Saved({sortWith}:props) {
   const context = useContext(WorkoutContext);
+  if (!context) return;
+  
   const {
     saved, setSaved,
     setSavedStats

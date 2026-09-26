@@ -1,9 +1,9 @@
 'use client';
 import { CalendarDays } from 'lucide-react';
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { WorkoutType } from '../../../../types/type';
 import { WorkoutContext } from '@/components/context/WorkoutContextPage';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 interface WorkoutProps {
   workout: WorkoutType;
@@ -11,10 +11,15 @@ interface WorkoutProps {
 
 export default function AddToPlan({ workout }: WorkoutProps) {
   const context = useContext(WorkoutContext);
+
+  if (!context) {
+    return;
+  }
+
   const {
     plan, setPlan,
     setTodaysStats,
-  } = context;
+  }  = context;
 
   const handleAdd = () => {
     const exists = plan.find((val) => val.id === workout.id);

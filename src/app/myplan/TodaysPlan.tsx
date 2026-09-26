@@ -11,15 +11,16 @@ interface props{
 }
 
 export default function TodaysPlan({sortWith}:props) {
+  const [done, setDone] = useState<WorkoutType[]>([]);
+
   const context = useContext(WorkoutContext);
+  if(!context) return;
   const {
     plan, setPlan, 
     setTodaysStats
   } = context;
 
   const sortedPlan = [...plan].sort((a, b) => a[sortWith] - b[sortWith])
-  
-  const [done, setDone] = useState<WorkoutType[]>([]);
 
   const handleDelete = (id: number) => {
     const deletedWorkout = plan.find((val) => val.id === id);

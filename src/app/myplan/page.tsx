@@ -7,11 +7,13 @@ import Saved from './Saved';
 import { SortOption } from '../../../types/type';
 
 export default function MyPlan() {
-  const context = useContext(WorkoutContext);
-  const {plan, saved,todaysStats, savedStats} = context;  
   const [activeTab, setActiveTab] = useState("today");
-
-const [sortWith, setSortWith] = useState<SortOption>("duration");
+  const [sortWith, setSortWith] = useState<SortOption>("duration");
+  
+  const context = useContext(WorkoutContext);
+  if (!context) return;
+  
+  const {plan, saved,todaysStats, savedStats} = context;  
 
   return (
     <div className="m-3 md:m-10 min-h-screen">

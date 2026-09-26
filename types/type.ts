@@ -21,4 +21,4 @@ export type StatsType = {
   calories: number;
 };
 
-export type SortOption = "duration" | "calories" | "rating";
+export type SortOption = "duration" | "caloriesBurned" | "rating";

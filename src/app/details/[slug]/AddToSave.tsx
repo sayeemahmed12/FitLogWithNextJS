@@ -11,6 +11,11 @@ interface WorkoutProps{
 
 export default function AddToSave({workout}:WorkoutProps) {
   const context = useContext(WorkoutContext);
+
+  if (!context) {
+    return;
+  }
+
   const {
     saved, setSaved,
     setSavedStats
