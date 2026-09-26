@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import BannerImage from "../../../public/assets/banner.png";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -28,9 +29,9 @@ export default function Hero() {
               into today's plan, and watch the week's work add up.
             </p>
 
-            <button className="btn bg-[#C2F800] text-black rounded-md">
+            <Link className="btn bg-[#C2F800] text-black rounded-md" href="#library">            
               BROWSE WORKOUTS
-            </button>
+            </Link>
           </div>
 
         </div>

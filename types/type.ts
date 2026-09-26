@@ -13,3 +13,10 @@ export interface WorkoutType {
   description: string;
   instructions: string[];
 }
+
+
+export type StatsType = {
+  exercises: number;
+  minutes: number;
+  calories: number;
+};

@@ -1,9 +1,13 @@
+'use client'
 import Image from 'next/image'
 import Logo from '../../../public/assets/logo.png'
 import Link from 'next/link'
 import NavBtn from './NavBtn'
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname();
+
   return (
   <div className="navbar bg-base-100 shadow-sm border-b border-gray-900">
     <div className="navbar-start sm:ml-10">
@@ -14,11 +18,14 @@ export default function Navbar() {
         <ul
           tabIndex={-1}
           className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-          <li className='font-bold'><Link href={"/"}>Workouts</Link></li>
-          <li className='font-bold'><Link href={"/myplan/"}>My Plan</Link></li>
+          <li className={`${pathname === '/' ? `text-[#C2F800] bg-[#1A2312]` : ``} font-bold rounded-2xl`}><Link href={"/"}>Workouts</Link></li>
+          <li className={`${pathname === '/myplan' ? `text-[#C2F800] bg-[#1A2312]` : ``} font-bold rounded-2xl`}><Link href={"/myplan"}>My Plan</Link></li>
+          <div className="navbar-start mt-2 ml-2 flex min-[380px]:hidden">
+            <NavBtn />
+          </div>
         </ul>
       </div>
-      <div className="">
+      <Link href={'/'} className="flex items-center">
         <Image
           src={Logo}
           alt='Logo'
@@ -26,16 +33,20 @@ export default function Navbar() {
           height={28}
           className='min-w-7'
         />
-      </div>
-      <h1 className="font-oswald text-2xl font-bold ml-3">FITLOG</h1>
+        <h1 className="font-oswald text-2xl font-bold ml-3">FITLOG</h1>
+      </Link>
     </div>
     <div className="navbar-center hidden lg:flex">
       <ul className="menu menu-horizontal px-1">
-          <li className='font-bold'><Link href={"/"}>Workouts</Link></li>
-          <li className='font-bold'><Link href={"/myplan/"}>My Plan</Link></li>
+          <li className={`${pathname === '/' ? `text-[#C2F800] bg-[#1A2312]` : ``} font-bold rounded-2xl`}><Link href={"/"}>Workouts</Link></li>
+          <li className={`${pathname === '/myplan' ? `text-[#C2F800] bg-[#1A2312]` : ``} font-bold rounded-2xl`}><Link href={"/myplan"}>My Plan</Link></li>
       </ul>
     </div>
-    <NavBtn />
+
+    <div className="navbar-end hidden min-[380px]:flex">
+      <NavBtn />
+    </div>
+    
   </div>
   )
 }

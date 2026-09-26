@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Logo from '../../../public/assets/logo.png'
+import Link from 'next/link'
 
 export default function Footer() {
   return (
@@ -7,7 +8,7 @@ export default function Footer() {
 
       <div className="mx-10 flex justify-between items-center">
         <div className="flex items-center">
-          <div className="">
+          <Link href={'/'} className="flex items-center">
             <Image
               src={Logo}
               alt='Logo'
@@ -15,8 +16,8 @@ export default function Footer() {
               height={24}
               className='min-w-6'
             />
-          </div>
-          <h1 className="font-oswald text-md font-bold ml-3">FITLOG</h1>
+            <h1 className="font-oswald text-md font-bold ml-3">FITLOG</h1>
+          </Link>
         </div>
 
         <div className="">

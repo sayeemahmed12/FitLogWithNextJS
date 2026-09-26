@@ -1,6 +1,6 @@
-import type{ WorkoutType } from '@/types/type';
 import React from 'react'
 import WorkoutCard from './WorkoutCard';
+import { WorkoutType } from '../../../types/type';
 
 const getWrokouts = async() => {
   const res =await fetch("https://api.abcz.workers.dev/api/fitlog");
@@ -16,7 +16,7 @@ export default async function Library() {
   const workouts = await getWrokouts();
 
   return (
-    <div className='m-10'>
+    <div id="library" className='m-10 scroll-mt-24'>
       <h1 className='font-oswald text-3xl font-bold'>THE LIBRARY</h1>
       <p className='text-gray-400'>Twelve lifts covering every major muscle group.</p>
       
