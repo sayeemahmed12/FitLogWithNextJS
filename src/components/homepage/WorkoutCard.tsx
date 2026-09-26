@@ -24,7 +24,7 @@ export default function WorkoutCard({workout}:workoutProps) {
             alt="Card" 
             width={500}
             height={300}
-            className="h-48 w-full object-cover sm:h-60 lg:h-70"
+            className="h-48 w-full object-cover sm:h-60 lg:h-70 rounded-t-2xl"
           />
         </figure>
 

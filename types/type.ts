@@ -20,3 +20,5 @@ export type StatsType = {
   minutes: number;
   calories: number;
 };
+
+export type SortOption = "duration" | "calories" | "rating";

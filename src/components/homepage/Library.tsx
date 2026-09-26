@@ -16,7 +16,7 @@ export default async function Library() {
   const workouts = await getWrokouts();
 
   return (
-    <div id="library" className='m-10 scroll-mt-24'>
+    <div id="library" className='m-5 md:m-10 scroll-mt-24'>
       <h1 className='font-oswald text-3xl font-bold'>THE LIBRARY</h1>
       <p className='text-gray-400'>Twelve lifts covering every major muscle group.</p>
       

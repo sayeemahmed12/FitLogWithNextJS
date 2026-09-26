@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <div className="py-5 border-t border-gray-800/85">
 
-      <div className="mx-10 flex justify-between items-center">
+      <div className="mx-5 md:mx-10 flex justify-between items-center gap-5">
         <div className="flex items-center">
           <Link href={'/'} className="flex items-center">
             <Image
