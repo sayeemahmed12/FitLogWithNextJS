@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 export default function NavBtn() {
   const context = useContext(WorkoutContext);
+  if(!context) return;
   const {plan, saved} = context;
 
   return (
