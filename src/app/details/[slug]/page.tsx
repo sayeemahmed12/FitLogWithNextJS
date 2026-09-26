@@ -1,16 +1,22 @@
 import Image from 'next/image'
 import PlanButton from './AddToPlan'
 import SavedButton from './AddToSave'
+import { notFound } from 'next/navigation';
+import { collectSegmentData } from 'next/dist/server/app-render/collect-segment-data';
 
 interface paramsProps{
   params: Promise<{ slug: string }>
 }
 
 export default async function DetailsPage({params}:paramsProps) {
-  const {slug} = await params
+  const {slug} = await params;
 
-  const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${slug}`)
-  const workout = await res.json()
+  const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${slug}`);
+  const workout = await res.json();
+
+  if(!res.ok){
+    notFound();
+  }
 
   return (
     <div className="mx-5 my-15 ">
